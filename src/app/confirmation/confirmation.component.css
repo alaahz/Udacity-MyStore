@@ -1,0 +1,20 @@
+.text{
+    font-family: 'Playfair Display', serif;
+    font-family: 'Tajawal', sans-serif;
+}
+.btn{
+    border: 3px light black;
+    background-color: white;
+    color: black;
+    border-color: #ff725e;
+    font-size: 20px; 
+    font-family: 'Playfair Display', serif;
+    font-family: 'Tajawal', sans-serif;
+    
+}
+  .btn:hover{
+    border-color: white;
+    background-color: #ff725e;
+    color: white;
+
+  }

@@ -1,0 +1,52 @@
+.image{
+  height:200px;
+  width:150px;
+  margin-left:50px;
+  margin-top: 15px;
+}
+.btn{
+  border: 1px light black;
+  background-color: white;
+  color: black;
+  font-family: 'Playfair Display', serif;
+  font-family: 'Tajawal', sans-serif;
+  font-size: 13px;
+  height: 28px;
+  width: 100px;
+  cursor: pointer;     
+}
+
+
+.success {
+
+  border-color: #ff725e;
+  color: #1D3461;
+}
+
+.success:hover {
+  background-color: #ff725e;
+  color: white;
+}
+
+
+.info {
+  border-color: #1d3461;
+  color: #1d3461
+}
+
+
+.div-btn{
+  display: flex; 
+  gap: 40px;
+} 
+
+.text{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow:ellipsis; 
+  max-width: 100ch;
+  font-family: 'Playfair Display', serif;
+  font-family: 'Tajawal', sans-serif;
+}
+
+

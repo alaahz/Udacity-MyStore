@@ -1,0 +1,38 @@
+<form class="accordion-body" #form="ngForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Full name</label>
+      <input type="text" name="name" [(ngModel)]="name" required  minlength="3" #userName="ngModel" class="form-control" id="exampleFormControlInput1" placeholder="Minimum 3 characters">
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlTextarea1" class="form-label">Address</label>
+      <input type="text" name="address" [(ngModel)]="address" required  minlength="4" #userAddress="ngModel" class="form-control" id="exampleFormControlInput1" placeholder="Minimum 4 characters">
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlTextarea1" class="form-label">Credit Card Number</label>
+      <input type="number" name ="ccn" [(ngModel)]="ccn" required maxlength="16"  #userCCN="ngModel" class="form-control" id="exampleFormControlInput1" placeholder="16-digit number">
+    </div>
+    <div class="col-auto">
+      <button type="submit" [disabled]="form.invalid" class="btn btn-primary mb-3"  >Submit</button>
+    </div>
+  </form>
+  <div *ngIf="userName.invalid && userName.dirty || 
+  userAddress.invalid && userAddress.dirty || userCCN.invalid && userCCN.dirty">
+    <div *ngIf="userName.errors?.['required']">
+      Please provide your name to complete the payment.
+    </div>
+    <div *ngIf="userName.errors?.['minlength']">
+      The name must not be less than 3 characters
+    </div>
+    <div *ngIf="userAddress.errors?.['required']">
+      Please provide your address to complete the payment.
+    </div>
+    <div *ngIf="userAddress.errors?.['minlength']">
+      The name must not be less than 4 characters
+    </div>
+    <div *ngIf="userCCN.errors?.['required']">
+      Please provide your Credit Card Number to complete the payment.
+    </div>
+    <div *ngIf="userCCN.errors?.['maxlength']">
+      The name must not be less than or greater than 16 characters
+    </div>
+</div>

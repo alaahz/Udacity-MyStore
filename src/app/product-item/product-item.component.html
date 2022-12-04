@@ -1,0 +1,16 @@
+<div class="col" href="../../examples/#" >            
+<div class="card"  style="text-align: center; width:18em;">
+    <img src="{{product.image}}" class="image" alt="product" >
+        <div class="card-body">
+            <h5 class="text" routerLink="/product/{{product.id}}" >{{product.title}}</h5>
+            <p  class="text">{{product.description}}</p>
+            <h6 class="card-title">{{product.price}}$</h6>
+            <form class="div-btn" (ngSubmit)="addToCart(product)">
+                <button class="btn success">Add to cart</button>
+                <input class="btn info" name="quantity" type="number" min="1" max="10" value="1" [(ngModel)]="quantity"/>
+            </form>
+        </div>
+</div>
+
+</div>
+<br>

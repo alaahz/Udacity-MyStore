@@ -1,0 +1,38 @@
+<div class="container text-center" style="margin-top:200px" >
+    <div class="row" *ngIf="!loading">
+      <div class="col-sm-6">
+        <img src={{product.image}} class="leftSide">
+      </div>
+      <div class="col-sm-6" *ngIf="!loading" >
+        <h3 class="text">{{product.title}}</h3>
+        <p class="text">{{product.description}}</p>
+        <p class="text">Rating:{{product.rating.rate}}</p>
+        <h4 class="text">Price:<span class="text">{{product.price}}</span>$</h4>
+        <br>
+           <select class="Selectbtn" aria-label="Default select example"  name="amount" [(ngModel)]="quantity">
+            <option [ngValue]=1 selected>1</option>
+            <option [ngValue]=2>2</option>
+            <option [ngValue]=3>3</option>
+            <option [ngValue]=4>4</option>
+            <option [ngValue]=5>5</option>
+            <option [ngValue]=6>6</option>
+            <option [ngValue]=7>7</option>
+            <option [ngValue]=8>8</option>
+            <option [ngValue]=9>9</option>
+            <option [ngValue]=10>10</option>
+          </select>
+       
+          <br>
+          <br>
+          <button type="button" class="btn" (click)="addToCart(product)">Add to cart</button>
+         
+
+      </div>
+      <a routerLink="/" class="text">back to products list</a>
+    </div>
+    <div class="row row-cols-1 row-cols-md-3 g-4" style="margin-top:100px;" *ngIf="loading">
+        <div class="spinner-border" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+</div>    
