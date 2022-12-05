@@ -1,8 +1,8 @@
 import { Component} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import {ProductService} from '../services/product.service'
-import {CartService} from '../../app/services/cart.service'
-import {CartModel} from '../../model/cartModel'
+import {ProductService} from '../../services/product.service'
+import {CartService} from '../../../app/services/cart.service'
+import {CartModel} from '../../../model/cartModel'
 
 @Component({
   selector: 'app-product-item-detail',
@@ -36,6 +36,8 @@ export class ProductItemDetailComponent {
       this.product= res
     })
   }
+  
+
   addToCart(product: CartModel) {
     const cart ={
       id : product.id,
@@ -47,6 +49,8 @@ export class ProductItemDetailComponent {
       quantity:this.quantity,
     }
     this.cartService.addToCart(cart);  
+    alert("Product added successfully to cart");
+
   }
  
 }

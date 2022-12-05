@@ -9,7 +9,7 @@
         <p class="text">Rating:{{product.rating.rate}}</p>
         <h4 class="text">Price:<span class="text">{{product.price}}</span>$</h4>
         <br>
-           <select class="Selectbtn" aria-label="Default select example"  name="amount" [(ngModel)]="quantity">
+           <select class="Selectbtn" aria-label="Default select example"  name="quantity" [(ngModel)]="quantity" (ngModelChange)="quantity = $event">
             <option [ngValue]=1 selected>1</option>
             <option [ngValue]=2>2</option>
             <option [ngValue]=3>3</option>
